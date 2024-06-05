@@ -182,18 +182,18 @@ VALUES (1, TRUE, (SELECT reasonId FROM transaction_blocking.BlockingReasons WHER
 UPDATE transaction_blocking.TransactionBlocks
 SET isBlocked = FALSE
 WHERE clientId = 1 AND isBlocked = TRUE;
-Check if a Client is Blocked
 ```
 
+#### Check if a Client is Blocked
 ```sql
 SELECT isBlocked, (SELECT reasonDescription FROM transaction_blocking.BlockingReasons WHERE reasonId = tb.reasonId) AS reason, blockedAt
 FROM transaction_blocking.TransactionBlocks tb
 WHERE clientId = 1
 ORDER BY blockedAt DESC
 LIMIT 1;
-Distinguish Client Type
 ```
 
+#### Distinguish Client Type
 ```sql
 SELECT (SELECT clientTypeName FROM transaction_blocking.ClientTypes WHERE clientTypeId = c.clientTypeId) AS clientType
 FROM transaction_blocking.Clients c
