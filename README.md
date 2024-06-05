@@ -2,7 +2,7 @@
 
 This API allows you to manage transaction blocks for payment delivery to businesses, ensuring secure and fraud-free transactions. 
 
-<i>Notice: it is just an OpenAPI specification made as an assignment<br>Acual service isn't developed yet</i>
+<i><b>Notice</b>: it is just an OpenAPI specification made as an assignment<br>Acual service isn't developed yet</i>
 
 ## 📜 Table of Contents
 - [Overview](#overview)
