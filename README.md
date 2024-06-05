@@ -5,15 +5,15 @@ This API allows you to manage transaction blocks for payment delivery to busines
 <i><b>Notice</b>: it is just an OpenAPI specification made as an assignment<br>Acual service isn't developed yet</i>
 
 ## 📜 Table of Contents
-- [Overview](#overview)
-- [API Endpoints](#api-endpoints)
-  - [Block Transactions](#block-transactions)
-  - [Unblock Transactions](#unblock-transactions)
-  - [Check Block Status](#check-block-status)
-  - [Distinguish Client Type](#distinguish-client-type)
-- [Schemas](#schemas)
-- [Example Usage](#example-usage)
-- [Database schema](#database-schema)
+- [Overview](#-overview)
+- [API Endpoints](#-api-endpoints)
+  - [Block Transactions](#-block-transactions)
+  - [Unblock Transactions](#-unblock-transactions)
+  - [Check Block Status](#-check-block-status)
+  - [Distinguish Client Type](#-distinguish-client-type)
+- [Schemas](#-schemas)
+- [Example Usage](#-example-usage)
+- [Database schema](#-database-schema)
 
 ## 📝 Overview
 
