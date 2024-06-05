@@ -2,7 +2,7 @@
 
 This API allows you to manage transaction blocks for payment delivery to businesses, ensuring secure and fraud-free transactions. 
 
-`payment_block.yaml` contains OpenAPI specs for payment blocking feature
+`payment_block.yaml` contains OpenAPI specs for payment blocking feature \\
 `database/schema.sql` contains script for [database schema](#-database-schema)
 
 <i><b>Notice</b>: it is just an OpenAPI specification made as an assignment<br>Acual service isn't developed yet</i>
