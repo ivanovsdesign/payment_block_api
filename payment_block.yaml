@@ -1,0 +1,139 @@
+openapi: 3.0.0
+info:
+  title: Payment Blocking API
+  description: API for managing transaction blocks for payment delivery to businesses.
+  version: 1.0.0
+servers:
+  - url: https://api.t-bank.com/v1
+    description: Sandbox server
+
+paths:
+  /clients/{clientId}/block:
+    post:
+      summary: Block transactions for a specific client
+      description: Suspend transactions for a client due to suspicious activity.
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          description: The ID of the client to block
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Client transactions blocked successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Client transactions have been blocked.
+        '400':
+          description: Bad request, possibly due to invalid client ID
+        '404':
+          description: Client not found
+
+  /clients/{clientId}/unblock:
+    post:
+      summary: Unblock transactions for a specific client
+      description: Resume transactions for a client after verification.
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          description: The ID of the client to unblock
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Client transactions unblocked successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Client transactions have been unblocked.
+        '400':
+          description: Bad request, possibly due to invalid client ID
+        '404':
+          description: Client not found
+
+  /clients/{clientId}/status:
+    get:
+      summary: Check if a client is blocked
+      description: Check the blocking status of a client.
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          description: The ID of the client to check
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Blocking status retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  clientId:
+                    type: string
+                  isBlocked:
+                    type: boolean
+                  reason:
+                    type: string
+                    example: Fraudulent activity detected
+        '400':
+          description: Bad request, possibly due to invalid client ID
+        '404':
+          description: Client not found
+
+  /clients/{clientId}/type:
+    get:
+      summary: Distinguish fraudsters from ordinary clients
+      description: Check if a client is flagged as a fraudster or an ordinary client.
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          description: The ID of the client to check
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Client type retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  clientId:
+                    type: string
+                  clientType:
+                    type: string
+                    enum: [fraudster, ordinary]
+                    example: ordinary
+        '400':
+          description: Bad request, possibly due to invalid client ID
+        '404':
+          description: Client not found
+
+components:
+  schemas:
+    Client:
+      type: object
+      properties:
+        clientId:
+          type: string
+        isBlocked:
+          type: boolean
+        reason:
+          type: string
+        clientType:
+          type: string
+          enum: [fraudster, ordinary]
