@@ -105,21 +105,21 @@ properties:
 ## 📘 Example Usage
 **Block a Client**
 ```shell
-curl -X POST "https://api.paymentdeliveryservice.com/v1/clients/client123/block"
+curl -X POST "https://api.t-bank.com/v1/clients/client123/block"
 ```
 
 **Unblock a Client**
 ```shell
-curl -X POST "https://api.paymentdeliveryservice.com/v1/clients/client123/unblock"
+curl -X POST "https://api.t-bank.com/v1/clients/client123/unblock"
 ```
 
 **Check if a Client is Blocked**
 ```shell
-curl -X GET "https://api.paymentdeliveryservice.com/v1/clients/client123/status"
+curl -X GET "https://api.t-bank.com/v1/clients/client123/status"
 ```
 **Get Client Type**
 ```shell
-curl -X GET "https://api.paymentdeliveryservice.com/v1/clients/client123/type"
+curl -X GET "https://api.t-bank.com/v1/clients/client123/type"
 ```
 
 
